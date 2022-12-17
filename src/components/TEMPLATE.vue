@@ -13,7 +13,7 @@ export default {
 
 </template>
 
-<style lang="scss">
-@use './style/general.scss';
-@use './style/partials/variables.scss';
+<style lang="scss" scoped>
+@use '../style/general.scss';
+@use '../style/partials/variables.scss';
 </style>
