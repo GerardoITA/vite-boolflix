@@ -1,12 +1,14 @@
 <script>
 import axios from 'axios';
 import Search from './components/Search.vue'
+import MovieList from './components/MovieList.vue'
 import { store } from '../src/store';
 
 export default {
   name: "App",
   components: {
     Search,
+    MovieList,
   },
   data() {
     return {
@@ -34,7 +36,7 @@ export default {
 <template>
   <Search @cerca="searchFilm"></Search>
   <main>
-
+    <MovieList></MovieList>
   </main>
 </template>
 
