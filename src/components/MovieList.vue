@@ -19,6 +19,12 @@ export default {
             }else {
                 return lang
             }
+        },
+        convertVote(vote){
+            let convVote = (vote / 2);
+
+            let roundVote = Math.round(convVote)
+            return roundVote
         }
     }
 }
@@ -31,7 +37,7 @@ export default {
         :titoloOriginale="film.original_title"
         :lingua="film.original_language"
         :immagine="store.flagsURL + convertLang(film.original_language)"
-        :voto="film.vote_average"
+        :voto="convertVote(film.vote_average)"
         ></MovieCard>
     </div>
     
