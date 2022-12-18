@@ -11,6 +11,15 @@ export default {
         return {
             store,
         }
+    },
+    methods: {
+        convertLang(lang) {
+            if (lang == "en") {
+                return "gb"
+            }else {
+                return lang
+            }
+        }
     }
 }
 </script>
@@ -21,6 +30,7 @@ export default {
         :titolo="film.title"
         :titoloOriginale="film.original_title"
         :lingua="film.original_language"
+        :immagine="store.flagsURL + convertLang(film.original_language)"
         :voto="film.vote_average"
         ></MovieCard>
     </div>

@@ -8,13 +8,15 @@ export default {
         titoloOriginale: String,
         lingua: String,
         voto: Number,
+        immagine: String,
 
     },
     data() {
         return {
             store,
         }
-    }
+       
+    },
 }
 </script>
 
@@ -23,6 +25,7 @@ export default {
         <h2>{{titolo}}</h2>
         <h3>{{titoloOriginale}}</h3>
         <h4>{{lingua}}</h4>
+        <img class="flag" :src="immagine" :alt="lingua">
         <h5>{{voto}}</h5>
     </div>
 </template>
@@ -35,4 +38,9 @@ export default {
     min-height: 300px;
     min-width: 150px;
 }
+.flag {
+    height: 17px;
+    width: 25px;
+}
+
 </style>
