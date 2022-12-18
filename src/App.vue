@@ -35,6 +35,7 @@ export default {
 
 <template>
   <Search @cerca="searchFilm"></Search>
+  <font-awesome-icon icon="fa-regular fa-star"></font-awesome-icon>
   <main>
     <MovieList></MovieList>
   </main>

@@ -41,6 +41,7 @@ export default {
             :voto="convertVote(film.vote_average)"
             :poster="store.imgURL + film.poster_path"
             >
+
             </MovieCard>
         </div>
     </div>
