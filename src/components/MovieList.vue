@@ -31,15 +31,20 @@ export default {
 </script>
 
 <template>
-    <div v-for="film in store.filmList" :key="film">
-        <MovieCard
-        :titolo="film.title"
-        :titoloOriginale="film.original_title"
-        :lingua="film.original_language"
-        :immagine="store.flagsURL + convertLang(film.original_language)"
-        :voto="convertVote(film.vote_average)"
-        ></MovieCard>
+    <div class="list">
+        <div v-for="film in store.filmList" :key="film">
+            <MovieCard 
+            :titolo="film.title" 
+            :titoloOriginale="film.original_title" 
+            :lingua="film.original_language"
+            :immagine="store.flagsURL + convertLang(film.original_language)" 
+            :voto="convertVote(film.vote_average)"
+            :poster="store.imgURL + film.poster_path"
+            >
+            </MovieCard>
+        </div>
     </div>
+   
     
 </template>
 
@@ -47,5 +52,11 @@ export default {
 @use '../style/general.scss';
 @use '../style/partials/variables.scss';
 
+.list {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
 </style>
