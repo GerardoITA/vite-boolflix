@@ -15,9 +15,19 @@ export default {
     data() {
         return {
             store,
+
         }
        
     },
+    methods: {
+        starFiller(icon, star){
+            if (star <= this.voto ){
+                return "fa-solid"
+            } else {
+                return icon
+            } 
+        } 
+    }
 }
 </script>
 
@@ -27,8 +37,11 @@ export default {
         <h3>{{titoloOriginale}}</h3>
         <h4>{{lingua}}</h4>
         <img class="flag" :src="immagine" :alt="lingua">
-        <h5>{{voto}}</h5>
         <img class="poster" :src="poster">
+        <div class="vote" v-for="star in 5" :key="star">
+            <font-awesome-icon :icon='starFiller("fa-regular", star) + " fa-star"'></font-awesome-icon>
+        </div>
+        
     </div>
 </template>
 
@@ -49,5 +62,8 @@ export default {
 .flag {
     height: 17px;
     width: 25px;
+}
+.vote {
+    color: yellow;
 }
 </style>
