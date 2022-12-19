@@ -2,6 +2,7 @@
 import axios from 'axios';
 import Search from './components/Search.vue'
 import MovieList from './components/MovieList.vue'
+import AppHeader from './components/AppHeader.vue'
 import { store } from '../src/store';
 
 export default {
@@ -9,54 +10,53 @@ export default {
   components: {
     Search,
     MovieList,
-  },
+    AppHeader
+},
   data() {
     return {
       store,
     }
   },
-  methods: {
+  /* methods: {
     searchFilm(){
       let filteredApiURL = store.apiURL;
-
-      let filteredTVApiURL = store.apiTVURL;
-
-
-
       console.log(store.searchText);
-
       filteredApiURL += store.searchText;
-
-  /*     filteredTVApiURL += store.searchText; */
-
       axios
         .get(filteredApiURL)
         .then(res => {
           store.filmList = res.data.results;
         })
-
-      /* axios
-        .get(filteredTVApiURL)
-        .then(res => {
-          store.tvList = res.data.results;
-        })
-
-      console.log(store.filmList) 
-      
-        store.mergedList = store.filmList.concat(store.tvList) */
     }
-  }
+  } */
 }  
 </script>
 
 <template>
-  <Search @cerca="searchFilm"></Search>
-  <main>
-    <MovieList></MovieList>
-  </main>
+  <div id="big">
+    <AppHeader id="appheader"></AppHeader>
+    <!-- <Search @cerca="searchFilm"></Search> -->
+    <main>
+      <MovieList></MovieList>
+    </main>
+  </div>
+  
 </template>
 
 <style lang="scss">
 @use "./style/general.scss";
 @use "./style/partials/variables.scss";
+#big {
+  background-color: rgb(27, 27, 27);
+  height: 100vh;
+}
+#appheader {
+  position: fixed;
+}
+main {
+  position: relative;
+  top: 100px;
+  height: calc(100% - 100px);
+  overflow-y: auto;
+}
 </style>

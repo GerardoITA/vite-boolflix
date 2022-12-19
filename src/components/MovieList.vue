@@ -40,6 +40,7 @@ export default {
             :immagine="store.flagsURL + convertLang(film.original_language)" 
             :voto="convertVote(film.vote_average)"
             :poster="store.imgURL + film.poster_path"
+            :trama="film.overview"
             >
 
             </MovieCard>
