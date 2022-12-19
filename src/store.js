@@ -6,5 +6,7 @@ export const store = reactive({
     flagsURL: 'https://countryflagsapi.com/png/',
     imgURL: 'https://image.tmdb.org/t/p/w342',
     filmList: [],
+    tvList: [],
+    mergedList: [],
     searchText: "",
 }); 

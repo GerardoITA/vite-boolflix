@@ -19,15 +19,31 @@ export default {
     searchFilm(){
       let filteredApiURL = store.apiURL;
 
+      let filteredTVApiURL = store.apiTVURL;
+
+
+
       console.log(store.searchText);
 
       filteredApiURL += store.searchText;
+
+  /*     filteredTVApiURL += store.searchText; */
+
       axios
         .get(filteredApiURL)
         .then(res => {
           store.filmList = res.data.results;
         })
-      console.log(store.filmList)  
+
+      /* axios
+        .get(filteredTVApiURL)
+        .then(res => {
+          store.tvList = res.data.results;
+        })
+
+      console.log(store.filmList) 
+      
+        store.mergedList = store.filmList.concat(store.tvList) */
     }
   }
 }  
