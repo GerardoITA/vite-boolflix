@@ -19,18 +19,6 @@ export default {
       store,
     }
   },
-  /* methods: {
-    searchFilm(){
-      let filteredApiURL = store.apiURL;
-      console.log(store.searchText);
-      filteredApiURL += store.searchText;
-      axios
-        .get(filteredApiURL)
-        .then(res => {
-          store.filmList = res.data.results;
-        })
-    }
-  } */
 }  
 </script>
 

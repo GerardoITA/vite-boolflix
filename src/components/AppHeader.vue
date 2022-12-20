@@ -39,7 +39,6 @@ export default {
                 store.filmAPIgenerated = true;
             } 
             
-            
         }
     }
 }

@@ -49,7 +49,7 @@ export default {
                 :lingua="film.original_language"
                 :immagine="store.flagsURL + convertLang(film.original_language)" 
                 :voto="convertVote(film.vote_average)"
-                :poster="store.imgURL + film.poster_path"
+                :poster="film.poster_path !== null ? store.imgURL + film.poster_path : store.backupPoster"
                 :trama="film.overview"
                 >
 

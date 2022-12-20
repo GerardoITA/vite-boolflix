@@ -7,6 +7,7 @@ export const store = reactive({
     imgURL: 'https://image.tmdb.org/t/p/w342',
     filmAPIgenerated: false,
     TVAPIgenerated: false,
+    backupPoster: '../src/assets/img/noposter.png',
     filmList: [],
     tvList: [],
     searchText: "",
