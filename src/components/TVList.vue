@@ -44,8 +44,8 @@ export default {
         <div  class="carousel" id="menuTV">
             <div v-for="(film, index) in store.tvList" :key="index">
                 <MovieCard 
-                :titolo="film.title" 
-                :titoloOriginale="film.original_title" 
+                :titolo="film.name" 
+                :titoloOriginale="film.original_name" 
                 :lingua="film.original_language"
                 :immagine="store.flagsURL + convertLang(film.original_language)" 
                 :voto="convertVote(film.vote_average)"
