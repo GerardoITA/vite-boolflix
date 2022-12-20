@@ -9,6 +9,5 @@ export const store = reactive({
     TVAPIgenerated: false,
     filmList: [],
     tvList: [],
-    mergedList: [],
     searchText: "",
 }); 

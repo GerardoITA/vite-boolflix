@@ -30,9 +30,16 @@ export default {
                 .then(res => {
                     store.tvList = res.data.results;
                 })
+            
+            if (store.tvList !== []) {
+                store.TVAPIgenerated = true;
+            } 
 
-            store.filmAPIgenerated = true;
-            store.TVAPIgenerated = true;
+            if ( store.filmList !== []) {
+                store.filmAPIgenerated = true;
+            } 
+            
+            
         }
     }
 }
