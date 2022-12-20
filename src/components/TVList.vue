@@ -1,6 +1,6 @@
 <script>
 import { store } from '../store';
-import MovieCard from '../components/MovieCard.vue';
+import MovieCard from './MovieCard.vue';
 
 export default {
     name: "MovieList",
@@ -27,22 +27,22 @@ export default {
             return roundVote
         },
         scrollLeft() {
-            let thing = document.getElementById("menu");
+            let thing = document.getElementById("menuTV");
             thing.scrollLeft -= 400;
         },
         scrollRight() {
-            let thing = document.getElementById("menu");
+            let thing = document.getElementById("menuTV");
             thing.scrollLeft += 400;
         },
-    },
 
+    }
 }
 </script>
 
 <template>
     <div class="list">
-        <div  class="carousel" id="menu">
-            <div v-for="(film, index) in store.filmList" :key="index">
+        <div  class="carousel" id="menuTV">
+            <div v-for="(film, index) in store.tvList" :key="index">
                 <MovieCard 
                 :titolo="film.title" 
                 :titoloOriginale="film.original_title" 
@@ -55,11 +55,11 @@ export default {
 
                 </MovieCard>
             </div>
-            <div :class="store.filmAPIgenerated ? 'show' : 'noshow'">
+            <div :class="store.TVAPIgenerated ? 'show' : 'noshow'">
                 <div id="left" @click="scrollLeft()"><font-awesome-icon icon='fa-solid fa-angles-left'></font-awesome-icon></div>
                 <div id="right" @click="scrollRight()"><font-awesome-icon icon='fa-solid fa-angles-right'></font-awesome-icon></div>
             </div>
-        
+           
         </div>
         
     </div>
@@ -88,6 +88,7 @@ export default {
 .show {
     display: inline-block;
 }
+
 .noshow {
     display: none;
 }
@@ -117,5 +118,3 @@ export default {
     border: 1px solid black;
 }
 </style>
-
-<!-- v-if='this.APIgen ? "show" : "noshow"' -->

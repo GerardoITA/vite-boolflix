@@ -22,6 +22,17 @@ export default {
                 .then(res => {
                     store.filmList = res.data.results;
                 })
+
+            let filteredTVURL = store.apiTVURL;
+            filteredTVURL += store.searchText;
+            axios
+                .get(filteredTVURL)
+                .then(res => {
+                    store.tvList = res.data.results;
+                })
+
+            store.filmAPIgenerated = true;
+            store.TVAPIgenerated = true;
         }
     }
 }

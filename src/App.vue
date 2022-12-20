@@ -1,7 +1,8 @@
 <script>
-import axios from 'axios';
+import axios from 'axios'
 import Search from './components/Search.vue'
 import MovieList from './components/MovieList.vue'
+import TVList from './components/TVList.vue'
 import AppHeader from './components/AppHeader.vue'
 import { store } from '../src/store';
 
@@ -10,7 +11,8 @@ export default {
   components: {
     Search,
     MovieList,
-    AppHeader
+    AppHeader,
+    TVList,
 },
   data() {
     return {
@@ -38,6 +40,7 @@ export default {
     <!-- <Search @cerca="searchFilm"></Search> -->
     <main>
       <MovieList></MovieList>
+      <TVList></TVList>  
     </main>
   </div>
   
@@ -57,6 +60,8 @@ main {
   position: relative;
   top: 100px;
   height: calc(100% - 100px);
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 </style>
