@@ -34,8 +34,8 @@ export default {
             let thing = document.getElementById("menu");
             thing.scrollLeft += 400;
         },
-    },
 
+    },
 }
 </script>
 
